@@ -1,5 +1,6 @@
 {
   "name": "api-doc-genie",
+  "publisher": "Codigoaxaca",
   "displayName": "API Doc Genie",
   "description": "API Doc Genie streamlines the creation of API documentation by automatically generating comprehensive and well-structured Markdown files, making the documentation process efficient and user-friendly.",
   "version": "0.0.1",
@@ -7,8 +8,11 @@
     "vscode": "^1.76.0"
   },
   "categories": [
+    "Programming Languages",
+    "Languages",
     "Other"
   ],
+  "license": "MIT",
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
