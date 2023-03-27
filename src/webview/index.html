@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src vscode-webview-resource: https:; script-src 'self' vscode-webview-resource: 'unsafe-eval'; style-src vscode-webview-resource:; connect-src https://api.openai.com;">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Doc Generator</title>
+  <link rel="stylesheet" href="{vscodeStylesUri}">
+  <link rel="stylesheet" href="{stylesUri}">
+</head>
+<body x-data="apiDocGenie">
+  
+  <form @submit.prevent="generarDocumentation">
+    <div class="form-group">
+      <label for="endpoint">* Endpoint:</label>
+      <input id="endpoint" type="text" x-model="form.endpoint" required placeholder="Enter url...">
+    </div>
+
+    <div class="form-group">
+      <label for="keywords">Description keywords:</label>
+      <input id="keywords" type="text" x-model="form.keywords" placeholder="Keywords to build your description">
+    </div>
+
+    <div class="form-group">
+      <label for="request">* Request:</label>
+      <small>
+        Not only you can use the request body, but also the code you're
+        using in your application to validate the request.
+      </small>
+      <textarea id="request" rows="5" x-model="form.request" required placeholder="Example of your request body or the code you use to validate your request."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="response">* Response example:</label>
+      <small>
+        Not only you can use the response body, but also the code you're
+        using in your application to build the response.
+      </small>
+      <textarea id="response" rows="5" x-model="form.response" required placeholder="Example of your response body or the code you use to build your response"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <button id="generate" x-bind:disabled="creatingDocumentation">
+        <span x-show="creatingDocumentation">Creating documentation...</span>
+        <span x-show="!creatingDocumentation">Create docs</span>
+      </button>
+    </div>
+  </form>
+  
+  <script src="{alpineJsUri}" defer></script>
+  <script src="{mainScriptUri}"></script>
+</body>
+</html>

@@ -12,12 +12,62 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "configuration": {
+      "title": "API Doc Genie",
+      "properties": {
+        "api-doc-genie.openaiToken": {
+          "type": "string",
+          "default": "",
+          "description": "OpenAI API token"
+        }
+      }
+    },
     "commands": [
       {
-        "command": "api-doc-genie.helloWorld",
-        "title": "Hello World"
+        "command": "api-doc-genie.openApiDocGenie",
+        "title": "API Doc Genie"
+      },
+      {
+        "command": "api-doc-genie.addToEndpoint",
+        "title": "Add to endpoint"
+      },
+      {
+        "command": "api-doc-genie.addToRequest",
+        "title": "Add to request"
+      },
+      {
+        "command": "api-doc-genie.addToResponse",
+        "title": "Add to response"
       }
-    ]
+    ],
+    "submenus": [
+      {
+        "id": "api-doc-genie.mainMenu",
+        "label": "API Doc Genie"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "api-doc-genie.mainMenu",
+          "group": "navigation"
+        }
+      ],
+      "api-doc-genie.mainMenu": [
+        {
+          "command": "api-doc-genie.addToEndpoint",
+          "group": "navigation"
+        },
+        {
+          "command": "api-doc-genie.addToRequest",
+          "group": "navigation"
+        },
+        {
+          "command": "api-doc-genie.addToResponse",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
