@@ -2,9 +2,11 @@
 
 API Doc Genie is a Visual Studio Code extension that streamlines the process of creating API documentation by automatically generating comprehensive and well-structured Markdown files for your API endpoints.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/m_jCK_3OhJQ" frameborder="0" allowfullscreen></iframe>
-
 ![Interface](https://raw.githubusercontent.com/IvanAquino/api-doc-genie/main/docs/interface.png)
+
+## Video demo
+
+[Youtube](https://youtu.be/m_jCK_3OhJQ)
 
 ## Features
 
@@ -42,10 +44,6 @@ To use API Doc Genie, you need to configure your OpenAI API token:
 ## Contributing
 
 If you want to contribute to this project, feel free to submit issues, open pull requests, or contact the maintainers.
-
-## Video demo
-
-[Demo](https://www.youtube.com/embed/m_jCK_3OhJQ)
 
 ## License
 
