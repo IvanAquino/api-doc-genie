@@ -5,17 +5,17 @@ import * as fs from 'fs';
 let panel : vscode.WebviewPanel | undefined;
 
 function getWebviewContent(context: vscode.ExtensionContext, panel: vscode.WebviewPanel) {
-  const webviewPath = path.join(context.extensionPath, 'src', 'webview', 'index.html');
+  const webviewPath = path.join(context.extensionPath, 'webview', 'index.html');
   const htmlContent = fs.readFileSync(webviewPath, 'utf-8');
 
-  const alpineJsPath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'webview', 'js', 'alpine.min.js'));
+  const alpineJsPath = vscode.Uri.file(path.join(context.extensionPath, 'webview', 'js', 'alpine.min.js'));
   const alpineJsUri = panel.webview.asWebviewUri(alpineJsPath);
-  const mainScriptPath = vscode.Uri.file(path.join(context.extensionPath, 'src','webview', 'js', 'main.js'));
+  const mainScriptPath = vscode.Uri.file(path.join(context.extensionPath,'webview', 'js', 'main.js'));
   const mainScriptUri = panel.webview.asWebviewUri(mainScriptPath);
 
-  const vscodeStylesPath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'webview', 'css', 'vscode.css'));
+  const vscodeStylesPath = vscode.Uri.file(path.join(context.extensionPath, 'webview', 'css', 'vscode.css'));
   const vscodeStylesUri = panel.webview.asWebviewUri(vscodeStylesPath);
-  const stylesPath = vscode.Uri.file(path.join(context.extensionPath, 'src', 'webview', 'css', 'styles.css'));
+  const stylesPath = vscode.Uri.file(path.join(context.extensionPath, 'webview', 'css', 'styles.css'));
   const stylesUri = panel.webview.asWebviewUri(stylesPath);
 
   return htmlContent

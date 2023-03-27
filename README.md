@@ -4,6 +4,7 @@ API Doc Genie is a Visual Studio Code extension that streamlines the process of 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/m_jCK_3OhJQ" frameborder="0" allowfullscreen></iframe>
 
+![Interface](https://raw.githubusercontent.com/IvanAquino/api-doc-genie/main/docs/interface.png)
 
 ## Features
 
@@ -41,6 +42,10 @@ To use API Doc Genie, you need to configure your OpenAI API token:
 ## Contributing
 
 If you want to contribute to this project, feel free to submit issues, open pull requests, or contact the maintainers.
+
+## Video demo
+
+[Demo](https://www.youtube.com/embed/m_jCK_3OhJQ)
 
 ## License
 
